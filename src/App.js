@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Counter from "./components/Counter";
 
-function App() {
-    const [count, setCount] = useState(30);
+const App = () => {
+    const [count, setCount] = useState(0);
     return (
         <div className="App">
-            <div className="App-header" style={{fontSize: '100px'}}>
-                Hello World
+            <div className="App-header" style={{fontSize: '25px'}}>
                 <Counter count={count} setCount={setCount}/>
             </div>
         </div>
