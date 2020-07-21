@@ -3,7 +3,7 @@ import './App.css';
 import Counter from "./components/Counter";
 
 const App = () => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(50);
     return (
         <div className="App">
             <div className="App-header" style={{fontSize: '25px'}}>
