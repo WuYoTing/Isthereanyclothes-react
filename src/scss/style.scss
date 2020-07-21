@@ -1,7 +1,22 @@
 /** SASS語法**/
 $red: red;
 $green: green;
+$yellow: yellow;
+$gray: gray;
 
 p {
   color: $red;
 }
+
+.h3 {
+  color: $green;
+}
+
+.tmp2 {
+  color: $yellow;
+}
+
+.tmp1 {
+  color: $gray;
+}
+
