@@ -1,22 +1,22 @@
 /** SASS語法**/
-$red: red;
-$green: green;
-$yellow: yellow;
+$google_Red: #db3236;
+$google_Green: #3cba54;
+$google_Yellow: #f4c20d;
+$google_Blue: #4885ed;
 $gray: gray;
 
-p {
-  color: $red;
+.hello {
+  color: $google_Green;
 }
 
-.h3 {
-  color: $green;
+.count {
+  color: $google_Blue;
 }
 
-.tmp2 {
-  color: $yellow;
+.btn {
+  background-color: $google_Yellow;
 }
 
-.tmp1 {
-  color: $gray;
+.changetime {
+  color: $google_Red
 }
-

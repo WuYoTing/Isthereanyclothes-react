@@ -1,7 +1,19 @@
 @charset "UTF-8";
 /** SASS語法**/
-p {
-  color: red;
+.hello {
+  color: #3cba54;
+}
+
+.count {
+  color: #4885ed;
+}
+
+.btn {
+  background-color: #f4c20d;
+}
+
+.changetime {
+  color: #db3236;
 }
 
 /*# sourceMappingURL=style.css.map */
