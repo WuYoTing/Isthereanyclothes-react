@@ -4,8 +4,9 @@
   color: #3cba54;
 }
 
-.count {
+.Link {
   color: #4885ed;
+  text-decoration: none;
 }
 
 .btn {
