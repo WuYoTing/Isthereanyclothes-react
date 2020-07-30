@@ -4,10 +4,7 @@ const AppContext = createContext();
 
 const AppProvider = (props) => {
     const appData = {
-        navOpen: false,
-        toggleSidenav: (value) => {
-            setApp(appData => ({ ...appData, navOpen: value }))
-        }
+
     }
     const [app, setApp] = useState(appData);
 

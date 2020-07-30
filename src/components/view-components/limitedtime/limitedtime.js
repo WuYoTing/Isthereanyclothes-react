@@ -7,8 +7,8 @@ import Card from "react-bootstrap/Card";
 class Limitedtime extends React.Component {
     render() {
         return (
-            <>
-                <h1>限時特價</h1>
+            <div>
+                <h1 className="text-center">限時特價</h1>
                 <Tabs defaultActiveKey="man" id="uncontrolled-tab-example">
                     <Tab eventKey="man" title="Man">
                         <CardDeck>
@@ -99,7 +99,7 @@ class Limitedtime extends React.Component {
                         </CardDeck>
                     </Tab>
                 </Tabs>
-            </>
+            </div>
         )
     }
 }

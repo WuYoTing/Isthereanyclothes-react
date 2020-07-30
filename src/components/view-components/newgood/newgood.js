@@ -9,7 +9,7 @@ class Newgood extends React.Component {
     render() {
         return (
             <>
-                <h1>新品</h1>
+                <h1 className="text-center">新品</h1>
                 <Tabs defaultActiveKey="man" id="uncontrolled-tab-example">
                     <Tab eventKey="man" title="Man">
                         <CardDeck>

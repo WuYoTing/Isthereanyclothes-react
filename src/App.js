@@ -1,7 +1,7 @@
-import React, {Redirect} from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/style.scss';
-import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import TopNav from "./components/partial-components/TopNav";
 import home from "./components/view-components/home";
 import pricedown from "./components/view-components/pricedown/pricedown";
@@ -16,33 +16,35 @@ import {AppProvider} from "./AppContext";
 const App = () => {
     return (
         <AppProvider>
-            <div className="view">
-                <header>
-                    <div>
-                        <span>LOGO區域</span>
-                    </div>
-                    <TopNav/>
-                </header>
-                <main>
-                    <Row>
-                        <Col/>
-                        <Col xs={9}>
-                            <Switch>
-                                <Route path="/home" component={home}></Route>
-                                <Route path="/pricedown" component={pricedown}></Route>
-                                <Route path="/limitedtime" component={limitedtime}></Route>
-                                <Route path="/onlineonly" component={onlineonly}></Route>
-                                <Route path="/newgood" component={newgood}></Route>
-                                <Route path='/goods/:user' component={search}/>
-                            </Switch>
-                        </Col>
-                        <Col/>
-                    </Row>
-                </main>
-                <footer>
-                    <p>This is footz</p>
-                </footer>
-            </div>
+            <BrowserRouter>
+                <div className="view">
+
+                    <header>
+                        <TopNav/>
+                    </header>
+
+                    <main>
+                        <Row>
+                            <Col/>
+                            <Col xs={9}>
+                                <Switch>
+                                    <Route path="/home" component={home}></Route>
+                                    <Route path="/pricedown" component={pricedown}></Route>
+                                    <Route path="/limitedtime" component={limitedtime}></Route>
+                                    <Route path="/onlineonly" component={onlineonly}></Route>
+                                    <Route path="/newgood" component={newgood}></Route>
+                                    <Route path='/goods/:user' component={search}/>
+                                </Switch>
+                            </Col>
+                            <Col/>
+                        </Row>
+                    </main>
+
+                    <footer className="text-center">
+                        <p>This is footer</p>
+                    </footer>
+                </div>
+            </BrowserRouter>
         </AppProvider>
     );
 }
