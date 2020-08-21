@@ -1,0 +1,29 @@
+.card {
+  max-width: 100%;
+
+}
+
+.card-title {
+  background-color: #F7F7F7;
+  display: block;
+}
+
+.card-img-top {
+  background-color: #F7F7F7;
+}
+
+.card-body {
+  background-color: #F7F7F7;
+  position: relative;
+  padding: 1rem 1rem;
+  flex-grow: 1;
+}
+
+.card-text {
+  background-color: #F7F7F7;
+}
+
+.card-columns {
+  column-count: 4;
+
+}
