@@ -1,22 +1,20 @@
-import React, {useState, createContext} from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './scss/style.scss';
-import './App.scss';
-import {BrowserRouter, Route, Switch,Redirect} from 'react-router-dom';
+import './stylesheets/style.scss';
+import './stylesheets/App.scss';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import TopNav from "./components/partial/topNav";
 import Home from "./components/view/home/home";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import GuWoman from "./components/view/gu/guWoman";
-import GuMan from "./components/view/gu/guMan";
-import UniqloMan from "./components/view/uniqlo/uniqloMan";
-import UniqloWoman from "./components/view/uniqlo/uniqloWoman";
-import useWindowSize from "./useWindowSize";
+import Gu from "./components/view/gu/gu";
+import Uniqlo from "./components/view/uniqlo/uniqlo";
+import useWindowSize from "./custom/useWindowSize";
 import DeviceContext from "./DeviceContext";
 
 const App = () => {
     const device = useWindowSize();
-    if (device == "tablet") {
+    if (device == "laptop") {
         return (
             <DeviceContext.Provider value={device}>
                 <BrowserRouter>
@@ -31,12 +29,15 @@ const App = () => {
                                 <Col/>
                                 <Col xs={8}>
                                     <Switch>
-                                        <Redirect exact from="/" to="/home"/>
+                                        <Route exact path="/">
+                                            <Redirect to="/home"/>
+                                        </Route>
                                         <Route path="/home" component={Home}></Route>
-                                        <Route path="/gu/man" component={GuMan}></Route>
-                                        <Route path="/gu/woman" component={GuWoman}></Route>
-                                        <Route path="/uniqlo/man" component={UniqloMan}></Route>
-                                        <Route path="/uniqlo/woman" component={UniqloWoman}></Route>
+                                        <Route path="/gu/man" component={() => (<Gu sex="man"/>)}></Route>
+                                        <Route path="/gu/woman" component={() => (<Gu sex="woman"/>)}></Route>
+                                        <Route path="/uniqlo/man" component={() => (<Uniqlo sex="man"/>)}></Route>
+                                        <Route path="/uniqlo/woman"
+                                               component={() => (<Uniqlo sex="woman"/>)}></Route>
                                     </Switch>
                                 </Col>
                                 <Col/>
@@ -61,11 +62,15 @@ const App = () => {
                                 <Col xs={1}/>
                                 <Col xs={10}>
                                     <Switch>
+                                        <Route exact path="/">
+                                            <Redirect to="/home"/>
+                                        </Route>
                                         <Route path="/home" component={Home}></Route>
-                                        <Route path="/gu/man" component={GuMan}></Route>
-                                        <Route path="/gu/woman" component={GuWoman}></Route>
-                                        <Route path="/uniqlo/man" component={UniqloMan}></Route>
-                                        <Route path="/uniqlo/woman" component={UniqloWoman}></Route>
+                                        <Route path="/gu/man" component={() => (<Gu sex="man"/>)}></Route>
+                                        <Route path="/gu/woman" component={() => (<Gu sex="woman"/>)}></Route>
+                                        <Route path="/uniqlo/man" component={() => (<Uniqlo sex="man"/>)}></Route>
+                                        <Route path="/uniqlo/woman"
+                                               component={() => (<Uniqlo sex="woman"/>)}></Route>
                                     </Switch>
                                 </Col>
                                 <Col xs={1}/>
