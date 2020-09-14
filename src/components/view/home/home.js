@@ -10,7 +10,7 @@ const Home = () => {
             <Form className="text-center">
                 <Form.Group>
                     <h1>主頁搜尋 {device}</h1>
-                    <Form.Control type="text" placeholder="請輸入關鍵字"/>
+                    <Form.Control type="text" placeholder="請輸入商品編號"/>
                 </Form.Group>
                 <Button variant="secondary">送出</Button>{' '}
             </Form>
@@ -20,9 +20,9 @@ const Home = () => {
             <Form className="text-center">
                 <Form.Group>
                     <h1>主頁搜尋 {device}</h1>
-                    <Form.Control type="text" placeholder="請輸入關鍵字"/>
+                    <Form.Control type="text" placeholder="請輸入商品編號"/>
                 </Form.Group>
-                <Button variant="secondary">送出</Button>{' '}
+                <Button variant="secondary">送出</Button>
             </Form>
         )
     }

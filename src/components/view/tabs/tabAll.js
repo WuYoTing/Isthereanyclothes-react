@@ -4,7 +4,7 @@ import useLazyLoad from "../../../custom/useLazyLoad";
 
 const TabAll = (props) => {
     const [data, setData] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
     const [observer, setElements, entries] = useLazyLoad({
         threshold: 0.25,
@@ -13,7 +13,6 @@ const TabAll = (props) => {
 
     useEffect(() => {
         const axiosData = async () => {
-            setIsLoading(true);
             setIsError(false);
             try {
                 const result = await props.axios();
@@ -28,6 +27,7 @@ const TabAll = (props) => {
 
     useEffect(() => {
         if (data.length) {
+            alert("getElementsByClassName LAZY");
             let img = Array.from(document.getElementsByClassName('lazy'));
             setElements(img)
         }
@@ -35,9 +35,12 @@ const TabAll = (props) => {
 
     useEffect(() => {
         entries.forEach(entry => {
+            alert("unIntersecting");
             if (entry.isIntersecting) {
+                alert("isIntersecting");
                 let lazyImage = entry.target;
                 lazyImage.src = lazyImage.dataset.src;
+                alert(lazyImage.dataset.src);
                 lazyImage.classList.remove("lazy");
                 observer.unobserve(lazyImage);
             }

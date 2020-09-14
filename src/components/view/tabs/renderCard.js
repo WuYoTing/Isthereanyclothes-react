@@ -11,7 +11,7 @@ const RenderCard = (props) => {
                 <CardColumns>
                     <ul>
                         {props.data.goodsInfo.allProdIndex.map(clothes => (
-                            <Card>
+                            <a className="card" href={"/goods/" + clothes.prodNumber}>
                                 <img className="card-img-top lazy"
                                      src={clothes.mainImageUrl}/>
                                 <Card.Body>
@@ -26,7 +26,7 @@ const RenderCard = (props) => {
                                     <small className="text-muted">${clothes.highestPrice} ->
                                         ${clothes.lowestPrice}</small>
                                 </Card.Footer>
-                            </Card>
+                            </a>
                         ))}
                     </ul>
                 </CardColumns>

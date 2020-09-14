@@ -58,7 +58,7 @@ const Uniqlo = (props) => {
         return (
             <div className="text-center">
                 <h1>UNIQLO {props.sex} {device}</h1>
-                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example">
+                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example" unmountOnExit="true">
                     <Tab eventKey="all" title="全部">
                         <TabApiCondition sex={props.sex} conditon="all"/>
                     </Tab>
@@ -81,7 +81,7 @@ const Uniqlo = (props) => {
         return (
             <div className="text-center">
                 <h1>UNIQLO {props.sex} {device}</h1>
-                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example">
+                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example" unmountOnExit="true">
                     <Tab eventKey="all" title="全部">
                         <TabApiCondition sex={props.sex} conditon="all"/>
                     </Tab>

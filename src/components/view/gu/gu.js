@@ -46,12 +46,11 @@ const TabApiCondition = (props) => {
 
 const Gu = (props) => {
     const device = useContext(DeviceContext);
-
     if (device == "laptop") {
         return (
             <div className="text-center">
                 <h1>GU {props.sex} {device}</h1>
-                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example">
+                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example" unmountOnExit="true">
                     <Tab eventKey="all" title="全部">
                         <TabApiCondition sex={props.sex} conditon="all"/>
                     </Tab>
@@ -74,7 +73,7 @@ const Gu = (props) => {
         return (
             <div className="text-center">
                 <h1>GU {props.sex} {device}</h1>
-                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example">
+                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example" unmountOnExit="true">
                     <Tab eventKey="all" title="全部">
                         <TabApiCondition sex={props.sex} conditon="all"/>
                     </Tab>

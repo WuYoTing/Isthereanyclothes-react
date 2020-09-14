@@ -10,7 +10,14 @@ import Row from "react-bootstrap/Row";
 import Gu from "./components/view/gu/gu";
 import Uniqlo from "./components/view/uniqlo/uniqlo";
 import useWindowSize from "./custom/useWindowSize";
+import Prod from "./components/view/prod/prod";
 import DeviceContext from "./DeviceContext";
+
+const Goods = ({ match }) => (
+    <div>
+        <prod prodNumber={match.params.prodNumber}/>
+    </div>
+)
 
 const App = () => {
     const device = useWindowSize();
@@ -38,6 +45,10 @@ const App = () => {
                                         <Route path="/uniqlo/man" component={() => (<Uniqlo sex="man"/>)}></Route>
                                         <Route path="/uniqlo/woman"
                                                component={() => (<Uniqlo sex="woman"/>)}></Route>
+
+
+                                        <Route path="/goods/:prodNumber"
+                                               component={Goods}></Route>
                                     </Switch>
                                 </Col>
                                 <Col/>
