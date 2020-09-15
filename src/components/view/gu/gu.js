@@ -2,16 +2,17 @@ import React, {useContext, useState} from "react";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import DeviceContext from "../../../DeviceContext";
-import "../../../stylesheets/view/card.scss";
-import TabAll from "../tabs/tabAll";
-import TabPricedown from "../tabs/tabPricedown";
-import TabLimitedtime from "../tabs/tabLimitedtime";
-import TabOnlineonly from "../tabs/tabOnlineonly";
-import TabNewgood from "../tabs/tabNewgood";
+import "../tabs/renderCard/renderCard.scss";
+import TabAll from "../tabs/tabAll/tabAll";
+import TabPricedown from "../tabs/tabPricedown/tabPricedown";
+import TabLimitedtime from "../tabs/tabLimitedtime/tabLimitedtime";
+import TabOnlineonly from "../tabs/tabOnlineonly/tabOnlineonly";
+import TabNewgood from "../tabs/tabNewgood/tabNewgood";
 import {
     apiGuManAll, apiGuWomanAll, apiGuManPricedown, apiGuWomanPricedown, apiGuManLimitedtime, apiGuWomanLimitedtime
     , apiGuManOnlineonly, apiGuWomanOnlineonly, apiGuManNewgood, apiGuWomanNewgood
 } from "../../../api/guApi";
+import "./gu.scss";
 
 const TabApiCondition = (props) => {
     if (props.sex == 'man') {

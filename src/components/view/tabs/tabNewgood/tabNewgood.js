@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import RenderCard from "./renderCard";
-import useLazyLoad from "../../../custom/useLazyLoad";
+import RenderCard from "../renderCard/renderCard";
+import useLazyLoad from "../../../../custom/useLazyLoad";
 
-const TabOnlineonly = (props) => {
+const TabNewgood = (props) => {
     const [data, setData] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
@@ -55,4 +55,4 @@ const TabOnlineonly = (props) => {
     )
 }
 
-export default TabOnlineonly;
+export default TabNewgood;

@@ -1,9 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './stylesheets/style.scss';
-import './stylesheets/App.scss';
+import './App.scss';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
-import TopNav from "./components/partial/topNav";
+import TopNav from "./components/partial/topNav/topNav";
 import Home from "./components/view/home/home";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -45,8 +44,6 @@ const App = () => {
                                         <Route path="/uniqlo/man" component={() => (<Uniqlo sex="man"/>)}></Route>
                                         <Route path="/uniqlo/woman"
                                                component={() => (<Uniqlo sex="woman"/>)}></Route>
-
-
                                         <Route path="/goods/:prodNumber"
                                                component={Goods}></Route>
                                     </Switch>
