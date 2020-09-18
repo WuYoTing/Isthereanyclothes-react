@@ -9,7 +9,7 @@ import './topNav.scss';
 
 const TopNav = () => {
     const device = useContext(DeviceContext);
-    if (device == "laptop") {
+    if (device === "laptop") {
         return (
             <div className="main-color">
                 <Navbar>
@@ -37,9 +37,9 @@ const TopNav = () => {
     } else {
         return (
             <div className="main-color">
-                <Navbar collapseOnSelectv  expand="lg" >
+                <Navbar collapseOnSelectv expand="lg">
                     <Link to="/home" class="navbar-brand">isthereanyclothes</Link>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <Link to="/home" className="nav-link" bsPrefix>HOME</Link>

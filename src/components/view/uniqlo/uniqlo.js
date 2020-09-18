@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import DeviceContext from "../../../DeviceContext";
-import "../tabs/renderCard/renderCard.scss";
+import "../card/card/card.scss";
 import {
     apiUniqloManAll,
     apiUniqloWomanAll,
@@ -23,30 +23,30 @@ import TabNewgood from "../tabs/tabNewgood/tabNewgood";
 import "./uniqlo.scss";
 
 const TabApiCondition = (props) => {
-    if (props.sex == 'man') {
-        if (props.conditon == 'all') {
-            return (<TabAll axios={apiUniqloManAll}/>);
-        } else if (props.conditon == 'pricedown') {
-            return (<TabPricedown axios={apiUniqloManPricedown}/>);
-        } else if (props.conditon == 'limitedtime') {
-            return (<TabLimitedtime axios={apiUniqloManLimitedtime}/>);
-        } else if (props.conditon == 'onlineonly') {
-            return (<TabOnlineonly axios={apiUniqloManOnlineonly}/>);
-        } else if (props.conditon == 'newgood') {
-            return (<TabNewgood axios={apiUniqloManNewgood}/>);
+    if (props.sex === 'man') {
+        if (props.conditon === 'all') {
+            return (<TabAll axios={apiUniqloManAll} brand = "uniqlo"/>);
+        } else if (props.conditon === 'pricedown') {
+            return (<TabPricedown axios={apiUniqloManPricedown} brand = "uniqlo"/>);
+        } else if (props.conditon === 'limitedtime') {
+            return (<TabLimitedtime axios={apiUniqloManLimitedtime} brand = "uniqlo"/>);
+        } else if (props.conditon === 'onlineonly') {
+            return (<TabOnlineonly axios={apiUniqloManOnlineonly} brand = "uniqlo"/>);
+        } else if (props.conditon === 'newgood') {
+            return (<TabNewgood axios={apiUniqloManNewgood} brand = "uniqlo"/>);
         }
     } else {
-        if (props.sex == 'woman') {
-            if (props.conditon == 'all') {
-                return (<TabAll axios={apiUniqloWomanAll}/>);
-            } else if (props.conditon == 'pricedown') {
-                return (<TabPricedown axios={apiUniqloWomanPricedown}/>);
-            } else if (props.conditon == 'limitedtime') {
-                return (<TabLimitedtime axios={apiUniqloWomanLimitedtime}/>);
-            } else if (props.conditon == 'onlineonly') {
-                return (<TabOnlineonly axios={apiUniqloWomanOnlineonly}/>);
-            } else if (props.conditon == 'newgood') {
-                return (<TabNewgood axios={apiUniqloWomanNewgood}/>);
+        if (props.sex === 'woman') {
+            if (props.conditon === 'all') {
+                return (<TabAll axios={apiUniqloWomanAll} brand = "uniqlo"/>);
+            } else if (props.conditon === 'pricedown') {
+                return (<TabPricedown axios={apiUniqloWomanPricedown} brand = "uniqlo"/>);
+            } else if (props.conditon === 'limitedtime') {
+                return (<TabLimitedtime axios={apiUniqloWomanLimitedtime} brand = "uniqlo"/>);
+            } else if (props.conditon === 'onlineonly') {
+                return (<TabOnlineonly axios={apiUniqloWomanOnlineonly} brand = "uniqlo"/>);
+            } else if (props.conditon === 'newgood') {
+                return (<TabNewgood axios={apiUniqloWomanNewgood} brand = "uniqlo"/>);
             }
         }
     }
@@ -58,8 +58,8 @@ const Uniqlo = (props) => {
     if (device == "laptop") {
         return (
             <div className="text-center">
-                <h1>UNIQLO {props.sex} {device}</h1>
-                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example" unmountOnExit="true">
+                <h1>UNIQLO {props.sex}</h1>
+                <Tabs defaultActiveKey="pricedown" id="uncontrolled-tab-example" unmountOnExit="true">
                     <Tab eventKey="all" title="全部">
                         <TabApiCondition sex={props.sex} conditon="all"/>
                     </Tab>
@@ -81,8 +81,8 @@ const Uniqlo = (props) => {
     } else {
         return (
             <div className="text-center">
-                <h1>UNIQLO {props.sex} {device}</h1>
-                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example" unmountOnExit="true">
+                <h1>UNIQLO {props.sex} </h1>
+                <Tabs defaultActiveKey="pricedown" id="uncontrolled-tab-example" unmountOnExit="true">
                     <Tab eventKey="all" title="全部">
                         <TabApiCondition sex={props.sex} conditon="all"/>
                     </Tab>

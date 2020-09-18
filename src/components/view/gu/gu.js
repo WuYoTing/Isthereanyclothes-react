@@ -1,8 +1,8 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import DeviceContext from "../../../DeviceContext";
-import "../tabs/renderCard/renderCard.scss";
+import "../card/card/card.scss";
 import TabAll from "../tabs/tabAll/tabAll";
 import TabPricedown from "../tabs/tabPricedown/tabPricedown";
 import TabLimitedtime from "../tabs/tabLimitedtime/tabLimitedtime";
@@ -15,30 +15,30 @@ import {
 import "./gu.scss";
 
 const TabApiCondition = (props) => {
-    if (props.sex == 'man') {
-        if (props.conditon == 'all') {
-            return (<TabAll axios={apiGuManAll}/>);
-        } else if (props.conditon == 'pricedown') {
-            return (<TabPricedown axios={apiGuManPricedown}/>);
-        } else if (props.conditon == 'limitedtime') {
-            return (<TabLimitedtime axios={apiGuManLimitedtime}/>);
-        } else if (props.conditon == 'onlineonly') {
-            return (<TabOnlineonly axios={apiGuManOnlineonly}/>);
-        } else if (props.conditon == 'newgood') {
-            return (<TabNewgood axios={apiGuManNewgood}/>);
+    if (props.sex === 'man') {
+        if (props.conditon === 'all') {
+            return (<TabAll axios={apiGuManAll} brand = "gu"/>);
+        } else if (props.conditon === 'pricedown') {
+            return (<TabPricedown axios={apiGuManPricedown} brand = "gu"/>);
+        } else if (props.conditon === 'limitedtime') {
+            return (<TabLimitedtime axios={apiGuManLimitedtime} brand = "gu"/>);
+        } else if (props.conditon === 'onlineonly') {
+            return (<TabOnlineonly axios={apiGuManOnlineonly} brand = "gu"/>);
+        } else if (props.conditon === 'newgood') {
+            return (<TabNewgood axios={apiGuManNewgood} brand = "gu"/>);
         }
     } else {
-        if (props.sex == 'woman') {
-            if (props.conditon == 'all') {
-                return (<TabAll axios={apiGuWomanAll}/>);
-            } else if (props.conditon == 'pricedown') {
-                return (<TabPricedown axios={apiGuWomanPricedown}/>);
-            } else if (props.conditon == 'limitedtime') {
-                return (<TabLimitedtime axios={apiGuWomanLimitedtime}/>);
-            } else if (props.conditon == 'onlineonly') {
-                return (<TabOnlineonly axios={apiGuWomanOnlineonly}/>);
-            } else if (props.conditon == 'newgood') {
-                return (<TabNewgood axios={apiGuWomanNewgood}/>);
+        if (props.sex === 'woman') {
+            if (props.conditon === 'all') {
+                return (<TabAll axios={apiGuWomanAll} brand = "gu"/>);
+            } else if (props.conditon === 'pricedown') {
+                return (<TabPricedown axios={apiGuWomanPricedown} brand = "gu"/>);
+            } else if (props.conditon === 'limitedtime') {
+                return (<TabLimitedtime axios={apiGuWomanLimitedtime} brand = "gu"/>);
+            } else if (props.conditon === 'onlineonly') {
+                return (<TabOnlineonly axios={apiGuWomanOnlineonly} brand = "gu"/>);
+            } else if (props.conditon === 'newgood') {
+                return (<TabNewgood axios={apiGuWomanNewgood} brand = "gu"/>);
             }
         }
     }
@@ -50,8 +50,8 @@ const Gu = (props) => {
     if (device == "laptop") {
         return (
             <div className="text-center">
-                <h1>GU {props.sex} {device}</h1>
-                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example" unmountOnExit="true">
+                <h1>GU {props.sex} </h1>
+                <Tabs defaultActiveKey="pricedown" id="uncontrolled-tab-example" unmountOnExit="true">
                     <Tab eventKey="all" title="全部">
                         <TabApiCondition sex={props.sex} conditon="all"/>
                     </Tab>
@@ -73,8 +73,8 @@ const Gu = (props) => {
     } else {
         return (
             <div className="text-center">
-                <h1>GU {props.sex} {device}</h1>
-                <Tabs defaultActiveKey="all" id="uncontrolled-tab-example" unmountOnExit="true">
+                <h1>GU {props.sex} </h1>
+                <Tabs defaultActiveKey="pricedown" id="uncontrolled-tab-example" unmountOnExit="true">
                     <Tab eventKey="all" title="全部">
                         <TabApiCondition sex={props.sex} conditon="all"/>
                     </Tab>

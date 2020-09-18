@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import RenderCard from "../renderCard/renderCard";
+import RenderCard from "../../card/card/card";
 import useLazyLoad from "../../../../custom/useLazyLoad";
 
 const TabAll = (props) => {
@@ -50,7 +50,7 @@ const TabAll = (props) => {
     return (
         <div>
             <hr/>
-            <RenderCard data={data} isLoading={isLoading} isError={isError}/>
+            <RenderCard data={data} isLoading={isLoading} isError={isError} brand={props.brand}/>
         </div>
     )
 }

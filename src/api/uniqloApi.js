@@ -13,7 +13,7 @@ const uniqloWoman = axios.create({
 });
 
 // Uniqlo other domain
-const guOther = axios.create({
+const uniqloOther = axios.create({
     baseURL: 'http://localhost:8081/',
     timeout: 30000
 });
@@ -25,13 +25,14 @@ export const apiUniqloManLimitedtime = () => uniqloMan.get('/api/uniqlo/man/limi
 export const apiUniqloManOnlineonly = () => uniqloMan.get('/api/uniqlo/man/onlineonly');
 export const apiUniqloManNewgood = () => uniqloMan.get('/api/uniqlo/man/newgood');
 //Uniqlo 女生 path
-export const apiUniqloWomanAll = () => uniqloMan.get('/api/uniqlo/woman/all');
-export const apiUniqloWomanPricedown = () => uniqloMan.get('/api/uniqlo/woman/pricedown');
-export const apiUniqloWomanLimitedtime = () => uniqloMan.get('/api/uniqlo/woman/limitedtime');
-export const apiUniqloWomanOnlineonly = () => uniqloMan.get('/api/uniqlo/woman/onlineonly');
-export const apiUniqloWomanNewgood = () => uniqloMan.get('/api/uniqlo/woman/newgood');
+export const apiUniqloWomanAll = () => uniqloWoman.get('/api/uniqlo/woman/all');
+export const apiUniqloWomanPricedown = () => uniqloWoman.get('/api/uniqlo/woman/pricedown');
+export const apiUniqloWomanLimitedtime = () => uniqloWoman.get('/api/uniqlo/woman/limitedtime');
+export const apiUniqloWomanOnlineonly = () => uniqloWoman.get('/api/uniqlo/woman/onlineonly');
+export const apiUniqloWomanNewgood = () => uniqloWoman.get('/api/uniqlo/woman/newgood');
 //Uniqlo 其他
-export const apiUniqloSearch = () => uniqloMan.get('/api/uniqlo/man/newgood');
+export const apiUniqloSearch = prodNumber => uniqloOther.get('/api/uniqlo/goods/' + prodNumber);
+
 
 
 

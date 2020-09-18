@@ -31,7 +31,8 @@ export const apiGuWomanLimitedtime = () => guWoman.get('/api/gu/woman/limitedtim
 export const apiGuWomanOnlineonly = () => guWoman.get('/api/gu/woman/onlineonly');
 export const apiGuWomanNewgood = () => guWoman.get('/api/gu/woman/newgood');
 //Gu 其他
-export const apiGuSearch = () => guOther.get('/api/gu/goods/${prod_number}');
+export const apiGuSearch = prodNumber => guOther.get('/api/gu/goods/'+prodNumber);
+
 
 
 
