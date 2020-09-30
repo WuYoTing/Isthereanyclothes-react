@@ -1,7 +1,5 @@
 import React, {Fragment} from "react";
-import {Link} from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
-import Badge from "react-bootstrap/Badge";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import CardInfo from "../cardInfo/cardInfo";
 import './card.scss';
